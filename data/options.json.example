@@ -1,6 +1,7 @@
 {
     "kasausername" : "",
     "kasapassword" : "",
-    "cameraip" : "",
-    "cameraname": ""
+    "cams":  [
+        {"cameraip": "",  "cameraname": ""}
+    ]
 }
