@@ -46,7 +46,7 @@ class FfmpegWrapper:
                 '-y',
                 f'/tmp/streaming/thumbnails/{cam["cameraname"]}.jpg'
             ]
-            self.ffmpegProcess = subprocess.Popen(startCommand)
+            self.ffmpegProcess[cam['cameraname']] = subprocess.Popen(startCommand)
 
     def buildAuthToken(self):
         encodedPassword = self.encode(self.controller.config['kasapassword'])
@@ -61,4 +61,5 @@ class FfmpegWrapper:
     def __init__(self, controller, healthCheckSleepInterval):
         self.controller = controller
         self.authToken = self.buildAuthToken()
+        self.ffmpegProcess={}
 
